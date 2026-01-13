@@ -30,7 +30,7 @@ https://github.com/selabhvl/dat110public
 
 and run the HTTP client example at:
 
-https://github.com/selabhvl/dat110public/tree/master/week2/apphttpclient
+https://github.com/selabhvl/dat110public/tree/master/week3/apphttpclient
 
 that was briefly demonstrated in the lecture/lecture video.
 

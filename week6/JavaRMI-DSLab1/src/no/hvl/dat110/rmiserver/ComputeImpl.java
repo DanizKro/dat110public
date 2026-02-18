@@ -29,7 +29,7 @@ public class ComputeImpl extends UnicastRemoteObject implements ComputeInterface
 		int sum = a + b;
 		
 		try {
-			Thread.sleep(10000);
+			Thread.sleep(2000);
 		}catch(InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -38,4 +38,7 @@ public class ComputeImpl extends UnicastRemoteObject implements ComputeInterface
 	}
 
 
+	public void stoppServer() {
+		System.exit(0);
+	}
 }

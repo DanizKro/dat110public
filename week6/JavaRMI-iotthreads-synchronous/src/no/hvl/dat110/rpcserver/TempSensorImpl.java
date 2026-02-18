@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 import no.hvl.dat110.rpcinterface.TempSensorInterface;
+import no.hvl.dat110.tempsensor.TemperatureSensor;
 
 /**
  * For demonstration purpose in dat110 course
@@ -15,12 +16,21 @@ public class TempSensorImpl extends UnicastRemoteObject implements TempSensorInt
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	private double temp;
 	
 	public TempSensorImpl() throws RemoteException {
 		super();
+		temp=0.0;
 	}
-	
-	// TODO
-	// implement the remote methods defined in the interface here
 
+	@Override
+	public synchronized void setTemperature(int temp) throws RemoteException{
+		this.temp = temp;
+	}
+
+	@Override
+	public synchronized double getTemperature() throws RemoteException {
+		return temp;
+	}
 }

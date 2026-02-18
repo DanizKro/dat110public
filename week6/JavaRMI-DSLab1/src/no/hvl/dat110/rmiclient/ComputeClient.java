@@ -5,6 +5,7 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.Scanner;
 
 import no.hvl.dat110.rmiinterface.ComputeInterface;
 
@@ -40,6 +41,8 @@ public class ComputeClient {
 			
 			int sum = ci.addNumbers(a, b);
 			System.out.println("Sum of "+a+" and "+b+" = "+ sum);
+
+			ci.stoppServer();
 			
 		} catch(RemoteException | NotBoundException e) {
 			System.err.println("Error in RMI "+e.getMessage());

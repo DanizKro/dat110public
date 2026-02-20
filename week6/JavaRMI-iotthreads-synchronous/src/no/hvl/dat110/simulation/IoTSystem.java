@@ -4,9 +4,11 @@ import no.hvl.dat110.display.DisplayDevice;
 import no.hvl.dat110.rpcserver.TempRPCServer;
 import no.hvl.dat110.tempsensor.TemperatureDevice;
 
+import java.rmi.RemoteException;
+
 public class IoTSystem {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws RemoteException {
 		
 		System.out.println("System starting ... ");
 		
@@ -17,10 +19,11 @@ public class IoTSystem {
 		DisplayDevice display = new DisplayDevice(); 				// Start the display device that display temp value received from the sensor
 		
 		tempdevice.start();
-		display.start();
+		display.run();
+
 		try {
 			tempdevice.join();
-			display.join();
+//			display.join();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

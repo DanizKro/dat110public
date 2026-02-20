@@ -18,7 +18,7 @@ public class TemperatureDevice extends Thread {
 	
 	public void run() {
 		
-		System.out.println("temperature device started");
+		System.out.println("Temperature device started");
 
         try {
 			// Get a reference to the registry using the port
@@ -30,7 +30,7 @@ public class TemperatureDevice extends Thread {
 			for(int i = 0; i < 10; i++){
 				int temp = sn.read();
 				tempSensor.setTemperature(temp);
-				Thread.sleep(990);   // oppdaterer ny verdi rett før den leses i DisplayDivice med 990 msw
+				Thread.sleep(2000);   // oppdaterer ny verdi rett før den leses i DisplayDivice med 990 msw
 			}
 
 		} catch (Exception e) {
